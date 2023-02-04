@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Example-Name
+Exec='/home/<path-to-program>' %f
+Icon=/home/<path-to-icon>>
+Type=Application
+Categories=<folder>;

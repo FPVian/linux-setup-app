@@ -1,0 +1,38 @@
+#!/bin/bash
+ROOT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+source "$ROOT_DIR"/configs/imports.sh
+
+
+full () {
+    system_group &&
+    update_apt &&
+    settings_group &&
+    productivity_group &&
+    coding_group &&
+    fpv_group &&
+    gaming_group &&
+    cp /var/log/apt/term.log ~/Desktop/apt_log.txt &&
+    log_success "full setup" || log_failure "full setup"
+    }
+
+update () {
+    update_apt
+    flatpak update &&
+    log_success $FUNCNAME || log_failure $FUNCNAME
+    }
+
+add_to_path () {
+    echo "export PATH=\"$PWD:$PATH\"" | sudo tee -a ~/.bashrc &&
+    chmod +x setup &&
+    log_success $FUNCNAME || log_failure $FUNCNAME
+    }
+
+
+"$@"
+if [[ $# -eq 0 ]]; then
+    echo "
+add modifier 'full' to configure a new system
+add modifier 'update' to upgrade system packages
+otherwise specify the name of an application
+"
+fi
