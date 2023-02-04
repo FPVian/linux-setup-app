@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=Notion
+Comment=Web App
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=/home/<USER>/.local/share/ice/icons/Notion.png firefox --class WebApp-Notion --profile /home/<USER>/.local/share/ice/firefox/Notion --no-remote https://www.notion.so/'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/<USER>/.local/share/ice/icons/Notion.png
+Categories=GTK;WebApps;Office;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Notion
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=https://www.notion.so/
+X-WebApp-CustomParameters=
+X-WebApp-Isolated=true
+Name[en_US]=Notion

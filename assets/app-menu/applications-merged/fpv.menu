@@ -1,0 +1,21 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+    "http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
+<!-- Do not edit manually - generated and managed by xdg-desktop-menu -->
+
+<Menu>
+    <Name>Applications</Name>
+  <Menu>
+    <Name>FPV</Name>
+    <Directory>FPV.directory</Directory>
+    <Include>
+        <Category>fpv</Category>
+        <Filename>betaflight-configurator.desktop</Filename>
+        <Filename>betaflight-blackbox-explorer.desktop</Filename>
+        <Filename>expresslrs-configurator.desktop</Filename>
+        <Filename>userapp-Cura.AppImage-NNXSY1.desktop</Filename>
+        <Filename>openscad.desktop</Filename>
+        <Filename>org.shotcut.Shotcut.desktop</Filename>
+    </Include>
+  </Menu>
+</Menu>
+
