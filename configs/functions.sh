@@ -41,6 +41,7 @@ download_appimage () {
     package=$1
     url=$2
 
+    mkdir -p $portable_apps_path &&
     wget -O $portable_apps_path/$package.AppImage "$url" &&
     chmod +x $portable_apps_path/$package.AppImage &&
     log_success $package $FUNCNAME ||
@@ -51,6 +52,7 @@ download_standalone_app_archive () {
     package=$1
     url=$2
 
+    mkdir -p $portable_apps_path &&
     wget -O $portable_apps_path/$package.zip "$url" &&
     unzip -o $portable_apps_path/$package.zip -d $portable_apps_path/$package &&
     rm $portable_apps_path/$package.zip &&
@@ -62,6 +64,7 @@ download_targz_app_archive () {
     package=$1
     url=$2
 
+    mkdir -p $portable_apps_path &&
     wget -O $portable_apps_path/$package.tar.gz "$url" &&
     tar -xf $portable_apps_path/$package.tar.gz -C $portable_apps_path &&
     rm $portable_apps_path/$package.tar.gz &&
@@ -73,6 +76,7 @@ download_tarxz_app_archive () {
     package=$1
     url=$2
 
+    mkdir -p $portable_apps_path &&
     wget -O $portable_apps_path/$package.tar.xz "$url" &&
     tar -xf $portable_apps_path/$package.tar.xz -C $portable_apps_path &&
     rm $portable_apps_path/$package.tar.xz &&
