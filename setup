@@ -22,8 +22,12 @@ update () {
     }
 
 add_to_path () {
-    echo "export PATH=\"$PWD:$PATH\"" | sudo tee -a ~/.bashrc &&
-    chmod +x setup &&
+    if grep $PWD ~/.bashrc; then 
+            log "Working directory is already on the PATH in ~/.bashrc"
+    else
+        echo "export PATH=\"$PWD:$PATH\"" | sudo tee -a ~/.bashrc
+    fi &&
+    chmod +x "$ROOT_DIR"/setup &&
     log_success $FUNCNAME || log_failure $FUNCNAME
     }
 
